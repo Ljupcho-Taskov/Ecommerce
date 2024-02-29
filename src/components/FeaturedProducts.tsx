@@ -21,11 +21,11 @@ const FeaturedProducts: React.FC<Props> = ({ dataFeaturedProducts }) => {
               role="tabpanel"
             >
               <div className="wrap-slick2">
-                <div className="d-flex">
+                <div className="d-flex flex-wrap">
                   {dataFeaturedProducts.map((product) => (
                     <div
                       key={product.id}
-                      className={`col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ${product.gender}`}
+                      className={`col-12 col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ${product.gender}`}
                     >
                       <ProductItem {...product} />
                     </div>

@@ -5,7 +5,7 @@ const CategoryPicker: React.FC = () => {
   return (
     <div className="sec-banner bg0">
       <div className="row no-gutters">
-        <div className="col-6 m-lr-auto respon4">
+        <div className="col-12 col-sm-6 m-lr-auto respon4">
           <div className="block1 wrap-pic-w">
             <img src="/images/banner-04.jpg" alt="IMG-BANNER" />
 
@@ -31,7 +31,7 @@ const CategoryPicker: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-6 m-lr-auto respon4">
+        <div className="col-12 col-sm-6 m-lr-auto respon4">
           <div className="block1 wrap-pic-w">
             <img src="/images/banner-05.jpg" alt="IMG-BANNER" />
             <Link href="shop?gender=man">

@@ -15,7 +15,7 @@ const RelatedProducts: React.FC<Props> = ({ relatedData }) => {
         </div>
 
         <div className="wrap-slick2">
-          <div className="d-flex">
+          <div className="d-flex flex-wrap">
             {relatedData.map((product) => (
               <ProductItem key={`relateProduct-${product.id}`} {...product} />
             ))}

@@ -5,7 +5,7 @@ import Link from "next/link";
 const ProductItem: React.FC<ProductsType> = (product) => {
   return (
     <Link href={`/shop/${product.id}`}>
-      <a className="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+      <a className="col-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
         <div className="block2">
           <div className="block2-pic hov-img0">
             <img src={product.img} alt="IMG-PRODUCT" />
