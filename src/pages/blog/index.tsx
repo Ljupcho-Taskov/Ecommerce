@@ -169,16 +169,18 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
   if (query.category && query.q) {
     res = await fetch(
-      `http://localhost:5000/blogs?category_like=${query.category}&q=${query.q}`
+      `https://eccomerce-data-oohm.onrender.com/blogs?category_like=${query.category}&q=${query.q}`
     );
   } else if (query.category) {
     res = await fetch(
-      `http://localhost:5000/blogs?category_like=${query.category}`
+      `https://eccomerce-data-oohm.onrender.com/blogs?category_like=${query.category}`
     );
   } else if (query.q) {
-    res = await fetch(`http://localhost:5000/blogs?q=${query.q}`);
+    res = await fetch(
+      `https://eccomerce-data-oohm.onrender.com/blogs?q=${query.q}`
+    );
   } else {
-    res = await fetch(`http://localhost:5000/blogs`);
+    res = await fetch(`https://eccomerce-data-oohm.onrender.com/blogs`);
   }
   data = await res.json();
   if (data.length === 0) {

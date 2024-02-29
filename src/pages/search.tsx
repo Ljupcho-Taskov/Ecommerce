@@ -81,7 +81,9 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let noResultsProducts = false;
 
   if (query.searchTerm) {
-    res = await fetch(`http://localhost:5000/blogs?q=${query.searchTerm}`);
+    res = await fetch(
+      `https://eccomerce-data-oohm.onrender.com/blogs?q=${query.searchTerm}`
+    );
 
     dataBlog = await res.json();
 
@@ -91,7 +93,9 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   }
 
   if (query.searchTerm) {
-    res = await fetch(`http://localhost:5000/products?q=${query.searchTerm}`);
+    res = await fetch(
+      `https://eccomerce-data-oohm.onrender.com/products?q=${query.searchTerm}`
+    );
 
     dataProduct = await res.json();
 

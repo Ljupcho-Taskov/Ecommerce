@@ -207,16 +207,18 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
   if (query.gender && query.q) {
     res = await fetch(
-      `http://localhost:5000/products?gender_like=${query.gender}&q=${query.q}`
+      `https://eccomerce-data-oohm.onrender.com/products?gender_like=${query.gender}&q=${query.q}`
     );
   } else if (query.gender) {
     res = await fetch(
-      `http://localhost:5000/products?gender_like=${query.gender}`
+      `https://eccomerce-data-oohm.onrender.com/products?gender_like=${query.gender}`
     );
   } else if (query.q) {
-    res = await fetch(`http://localhost:5000/products?q=${query.q}`);
+    res = await fetch(
+      `https://eccomerce-data-oohm.onrender.com/products?q=${query.q}`
+    );
   } else {
-    res = await fetch("http://localhost:5000/products");
+    res = await fetch("https://eccomerce-data-oohm.onrender.com/products");
   }
   data = await res.json();
   return {
