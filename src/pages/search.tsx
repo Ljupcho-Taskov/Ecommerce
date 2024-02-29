@@ -60,7 +60,9 @@ const Search: NextPage<SearchProps> = ({
                   <p>There are no product results</p>
                 </div>
               ) : (
-                dataProduct.map((item) => <ProductItem {...item} />)
+                dataProduct.map((item) => (
+                  <ProductItem key={item.id} {...item} />
+                ))
               )}
               {/* !! */}
             </div>
