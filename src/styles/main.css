@@ -178,13 +178,14 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 .symbol-btn-back-to-top {
   font-size: 25px;
-  color: white;
+  color: black;
   line-height: 1em;
 }
 
 .btn-back-to-top:hover {
   opacity: 1;
   background-color: #717fe0;
+  background-color: white;
 }
 
 @media (max-width: 575px) {
