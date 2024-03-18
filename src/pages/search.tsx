@@ -29,12 +29,9 @@ const Search: NextPage<SearchProps> = ({
 
       <div className="bg0 m-t-23 p-b-140 mt-5">
         <div className="container">
-          {/* blogs  */}
-
           <>
             <h2 className="mb-5">Blogs</h2>
             <div className="row isotope-grid">
-              {/* blog skeleton - search result */}
               {noResultsBlogs ? (
                 <div className="col pb-5">
                   <p>There are no blog results</p>
@@ -46,15 +43,12 @@ const Search: NextPage<SearchProps> = ({
                   </div>
                 ))
               )}
-              {/* !! */}
             </div>
           </>
 
-          {/* products */}
           <>
             <h2 className="mb-5">Products</h2>
             <div className="row isotope-grid">
-              {/* product skeleton */}
               {noResultsProducts ? (
                 <div className="col pb-5">
                   <p>There are no product results</p>
@@ -64,7 +58,6 @@ const Search: NextPage<SearchProps> = ({
                   <ProductItem key={item.id} {...item} />
                 ))
               )}
-              {/* !! */}
             </div>
           </>
         </div>

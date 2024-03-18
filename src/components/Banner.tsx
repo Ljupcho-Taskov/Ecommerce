@@ -17,12 +17,10 @@ const Banner: React.FC<BannerType> = ({ title, preTitle }) => {
                 style={{ maxWidth: "600px" }}
               >
                 <div className="layer-slick1">
-                  {/* fill out this one */}
                   <span className="ltext-202 cl2 respon2">{preTitle}</span>
                 </div>
 
                 <div className="layer-slick1">
-                  {/* fill out this one */}
                   <h2 className="ltext-104 cl2 p-t-19 p-b-43 respon1">
                     {title}
                   </h2>

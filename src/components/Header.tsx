@@ -85,7 +85,6 @@ const Header: React.FC = () => {
 
               <div className="wrap-icon-header flex-w flex-r-m h-full">
                 <div className="flex-c-m h-full p-r-24">
-                  {/* make a click event listener on this div to show the search */}
                   <div
                     className="icon-header-item cl2 hov-cl1 trans-04 p-lr-11"
                     onClick={toggleSearch}
@@ -98,14 +97,12 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* use show-modal-search class on this div to toggle the serch*/}
         <div
           className={`modal-search-header flex-c-m trans-04 ${
             isSearchVisible ? "show-modal-search" : "js-hide-modal-search"
           }`}
         >
           <div className="container-search-header">
-            {/* close the search on this button on click */}
             <button
               className="flex-c-m btn-hide-modal-search trans-04"
               onClick={toggleSearch}

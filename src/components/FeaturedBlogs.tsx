@@ -15,7 +15,6 @@ const FeaturedBlogs: React.FC<Props> = ({ dataFeaturedBlogs }) => {
         </div>
 
         <div className="row">
-          {/* blog skeleton */}
           {dataFeaturedBlogs.map((blog) => (
             <Link href={`blog/${blog.id}`} key={blog.id}>
               <div className="col-sm-6 col-md-4 p-b-40">
