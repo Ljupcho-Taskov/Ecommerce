@@ -144,9 +144,7 @@ const ShopDetail: NextPage<Props> = ({ product, allProductsData }) => {
 export default ShopDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const featuredProductsRes = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/products"
-  );
+  const featuredProductsRes = await fetch("http://localhost:5001/products");
   const featuredProductsData: FeaturedProductsType[] =
     await featuredProductsRes.json();
 
@@ -164,16 +162,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const allProductsRes = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/products"
-  );
+  const allProductsRes = await fetch("http://localhost:5001/products");
   const allProductsData: FeaturedProductsType[] = await allProductsRes.json();
 
   let product: FeaturedProductsType | undefined = undefined;
 
   if (params?.id) {
     const featuredProductRes = await fetch(
-      `https://eccomerce-data-oohm.onrender.com/products/${params.id}`
+      `http://localhost:5001/products/${params.id}`
     );
     product = await featuredProductRes.json();
   }

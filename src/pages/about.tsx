@@ -86,9 +86,7 @@ const AboutPage: NextPage<Props> = ({ dataAbout }) => {
 export default AboutPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/about_page"
-  );
+  const res = await fetch("http://localhost:5001/about_page");
   const dataAbout: AboutPageType = await res.json();
   return {
     props: { dataAbout },

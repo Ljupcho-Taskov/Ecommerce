@@ -36,6 +36,7 @@ const Home: NextPage<HomeProps> = ({
       <FeaturedProducts dataFeaturedProducts={dataFeaturedProducts} />
 
       <FeaturedBlogs dataFeaturedBlogs={dataFeaturedBlogs} />
+      <div className="btn-back-top-top"></div>
     </>
   );
 };
@@ -43,20 +44,16 @@ const Home: NextPage<HomeProps> = ({
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/banner_content"
-  );
+  const res = await fetch("http://localhost:5001/banner_content");
   const data: BannerType = await res.json();
 
   const resFeaturedProducts = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/products/?_limit=4"
+    "http://localhost:5001/products/?_limit=4"
   );
   const dataFeaturedProducts: FeaturedProductsType[] =
     await resFeaturedProducts.json();
 
-  const resFeaturedBlogs = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/blogs/?_limit=3"
-  );
+  const resFeaturedBlogs = await fetch("http://localhost:5001/blogs/?_limit=3");
   const dataFeaturedBlogs: FeaturedBlogsType[] = await resFeaturedBlogs.json();
   return {
     props: { data, dataFeaturedProducts, dataFeaturedBlogs },

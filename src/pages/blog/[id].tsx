@@ -92,9 +92,7 @@ const BlogDetail: NextPage<Props> = ({ blog, allBlogsData }) => {
 export default BlogDetail;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const featuredBlogsRes = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/blogs"
-  );
+  const featuredBlogsRes = await fetch("http://localhost:5001/blogs");
   const featuredBlogsData: FeaturedBlogsType[] = await featuredBlogsRes.json();
 
   const paths = featuredBlogsData.map((blog) => {
@@ -111,16 +109,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const allBlogsRes = await fetch(
-    "https://eccomerce-data-oohm.onrender.com/blogs"
-  );
+  const allBlogsRes = await fetch("http://localhost:5001/blogs");
   const allBlogsData: FeaturedBlogsType[] = await allBlogsRes.json();
 
   let blog: FeaturedBlogsType | undefined = undefined;
 
   if (params?.id) {
     const featuredBlogsRes = await fetch(
-      `https://eccomerce-data-oohm.onrender.com/blogs/${params.id}`
+      `http://localhost:5001/blogs/${params.id}`
     );
     blog = await featuredBlogsRes.json();
   }
