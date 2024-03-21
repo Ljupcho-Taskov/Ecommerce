@@ -51,7 +51,7 @@ const ShopDetail: NextPage<Props> = ({ product, allProductsData }) => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-7 p-b-30">
-              <div className="p-r-30 p-lr-0-lg">
+              <div className=" p-lr-0-lg">
                 <div className="wrap-slick3 flex-sb flex-w">
                   <div className=" gallery-lb">
                     <div className="item-slick3">
