@@ -15,8 +15,6 @@ export default function Document() {
           type="text/css"
           href="/fonts/iconic/css/material-design-iconic-font.min.css"
         />
-
-        <link rel="stylesheet" type="text/css" href="/fonts/linearicons-v1.0.0/icon-font.min.css" />
       </Head>
       <body>
         <Main />

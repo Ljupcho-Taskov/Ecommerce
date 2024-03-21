@@ -4,6 +4,7 @@ import router, { useRouter } from "next/router";
 import { ProductsType } from "../../types/types";
 import Link from "next/link";
 import { useRef } from "react";
+import ScrollButton from "../../components/ScrollButton";
 
 interface ShopProps {
   data: ProductsType[];
@@ -114,7 +115,6 @@ const Shop: NextPage<ShopProps> = ({ data }) => {
               </div>
             </div>
 
-            {/* search */}
             <div className="panel-search w-full p-t-10 p-b-15">
               <form className="bor8 dis-flex p-l-15" onSubmit={handleOnSubmit}>
                 <button
@@ -178,21 +178,7 @@ const Shop: NextPage<ShopProps> = ({ data }) => {
             )}
           </div>
 
-          <div className="flex-l-m flex-w w-full p-t-10 m-lr--7">
-            <a
-              href="#"
-              className="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1"
-            >
-              1
-            </a>
-            <a href="#" className="flex-c-m how-pagination1 trans-04 m-all-7">
-              2
-            </a>
-            <a href="#" className="flex-c-m how-pagination1 trans-04 m-all-7">
-              3
-            </a>
-            L
-          </div>
+          <ScrollButton />
         </div>
       </div>
     </>

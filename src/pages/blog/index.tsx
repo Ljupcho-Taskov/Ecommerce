@@ -5,7 +5,8 @@ import BlogItem from "../../components/BlogItem";
 import PageTitle from "../../components/PageTitle";
 import { BlogsType } from "../../types/types";
 import Link from "next/link";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
+import ScrollButton from "../../components/ScrollButton";
 
 interface Props {
   data: BlogsType[];
@@ -14,6 +15,7 @@ interface Props {
 
 const Blog: NextPage<Props> = ({ data, noResults }) => {
   const { asPath } = useRouter();
+  const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,14 +46,22 @@ const Blog: NextPage<Props> = ({ data, noResults }) => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-lg-9 p-b-80">
-              <div className="p-r-45 p-r-0-lg">
+              <div className="">
                 {noResults ? (
                   <p>There are no results with your search.</p>
                 ) : (
                   data.map((blog) => (
-                    <Link href={`/blog/${blog.id}`} key={blog.id}>
+                    <div
+                      key={blog.id}
+                      onClick={() => {
+                        router.push({
+                          pathname: "/blog",
+                          query: `${blog.id}`,
+                        });
+                      }}
+                    >
                       <BlogItem {...blog} />
-                    </Link>
+                    </div>
                   ))
                 )}
               </div>
@@ -152,6 +162,7 @@ const Blog: NextPage<Props> = ({ data, noResults }) => {
                   </ul>
                 </div>
               </div>
+              <ScrollButton />
             </div>
           </div>
         </div>

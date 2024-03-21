@@ -4,6 +4,7 @@ import PageTitle from "../../components/PageTitle";
 import RelatedBlogs from "../../components/RelatedBlogs";
 import { FeaturedBlogsType } from "../../types/types";
 import { useEffect, useState } from "react";
+import ScrollButton from "../../components/ScrollButton";
 
 interface Props {
   blog: FeaturedBlogsType;
@@ -49,7 +50,7 @@ const BlogDetail: NextPage<Props> = ({ blog, allBlogsData }) => {
         <div className="container">
           <div className="row">
             <div className="col-md-8 col-lg-9 p-b-80">
-              <div className="p-r-45 p-r-0-lg">
+              <div>
                 <div className="wrap-pic-w how-pos5-parent">
                   <img src={blog.img} alt="IMG-BLOG" />
                 </div>
@@ -78,10 +79,9 @@ const BlogDetail: NextPage<Props> = ({ blog, allBlogsData }) => {
             </div>
 
             <div className="col-md-4 col-lg-3 p-b-80">
-              <div className="side-menu">
-                <RelatedBlogs relatedBlog={relatedBlogsData} />
-              </div>
+              <RelatedBlogs relatedBlog={relatedBlogsData} />
             </div>
+            <ScrollButton />
           </div>
         </div>
       </section>

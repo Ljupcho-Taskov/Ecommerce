@@ -4,6 +4,7 @@ import PageTitle from "../../components/PageTitle";
 import RelatedProducts from "../../components/RelatedProducts";
 import { FeaturedProductsType } from "../../types/types";
 import { useEffect, useState } from "react";
+import ScrollButton from "../../components/ScrollButton";
 
 interface Props {
   product: FeaturedProductsType;
@@ -137,6 +138,7 @@ const ShopDetail: NextPage<Props> = ({ product, allProductsData }) => {
       </section>
 
       <RelatedProducts relatedData={relatedProductsData} />
+      <ScrollButton />
     </>
   );
 };

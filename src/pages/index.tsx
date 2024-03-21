@@ -9,6 +9,7 @@ import {
   FeaturedBlogsType,
   FeaturedProductsType,
 } from "../types/types";
+import ScrollButton from "../components/ScrollButton";
 
 interface HomeProps {
   data: BannerType;
@@ -36,7 +37,7 @@ const Home: NextPage<HomeProps> = ({
       <FeaturedProducts dataFeaturedProducts={dataFeaturedProducts} />
 
       <FeaturedBlogs dataFeaturedBlogs={dataFeaturedBlogs} />
-      <div className="btn-back-top-top"></div>
+      <ScrollButton />
     </>
   );
 };

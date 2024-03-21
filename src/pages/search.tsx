@@ -38,7 +38,7 @@ const Search: NextPage<SearchProps> = ({
                 </div>
               ) : (
                 dataBlog.map((item) => (
-                  <div className="col-4" key={item.id}>
+                  <div className="col-12 col-md-4" key={item.id}>
                     <BlogItem {...item} />
                   </div>
                 ))
